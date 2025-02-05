@@ -30,11 +30,11 @@ const registerUser = asyncHandler(async (req, res) => {
 
     const token = generateToken(user._id);
     res.cookie('token', token, {
-        // path: '/',
-        // httpOnly: true,
+        path: '/',
+        httpOnly: true,
         expires: new Date(Date.now() + 1000 * 86400), // 1 day
         sameSite: 'lax',
-        // secure: true,
+        secure: true,
     });
 
     if (user) {
@@ -63,11 +63,11 @@ const loginUser = asyncHandler(async (req, res) => {
 
     const token = generateToken(user._id);
     res.cookie('token', token, {
-        // path: '/',
-        // httpOnly: true,
+        path: '/',
+        httpOnly: true,
         expires: new Date(Date.now() + 1000 * 86400), // 1 day
         sameSite: 'lax',
-        // secure: true,
+        secure: true,
     });
 
     if (user && passwordIsCorrrect) {
@@ -99,11 +99,11 @@ const getUser = asyncHandler(async (req, res) => {
 
 const logoutUser = asyncHandler(async (req, res) => {
     res.cookie('token', '', {
-        // path: '/',
-        // httpOnly: true,
+        path: '/',
+        httpOnly: true,
         expires: new Date(0),
         sameSite: 'lax',
-        // secure: true,
+        secure: true,
     });
     return res.status(200).json({ message: 'Successfully Logged Out' });
 });
@@ -173,11 +173,11 @@ const loginAsSeller = asyncHandler(async (req, res) => {
     // Generate a token and set cookie
     const token = generateToken(user._id);
     res.cookie('token', token, {
-        // path: '/',
-        // httpOnly: true,
+        path: '/',
+        httpOnly: true,
         expires: new Date(Date.now() + 1000 * 86400),
         sameSite: 'lax',
-        // secure: true,
+        secure: true,
     });
 
     // Send the response with updated user info
