@@ -27,10 +27,7 @@ app.use(bodyParser.json());
 
 app.use(
     cors({
-        origin: [
-            'http://localhost:3000',
-            'https://bid-out-client-hexwe1oe2-huys-projects-090228c7.vercel.app',
-        ],
+        origin: ['http://localhost:3000', 'https://bid-out-client.vercel.app'],
         methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
         credentials: true,
     })
